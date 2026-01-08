@@ -21,7 +21,7 @@ pipeline{
                 sh 'docker push "$REPOSITORY/$IMAGE_NAME:$TAG"'
                 sh 'docker push "$REPOSITORY/$IMAGE_NAME:latest"'
                 sh '''
-                cat > deployment_artifact${TAG} <<EOF
+                cat > deployment_artifact${TAG}.txt <<EOF
                 build: $BUILD_NUMBER
                 image: $REPOSITORY/$IMAGE_NAME:$TAG
                 commit: $GIT_COMMIT
@@ -62,4 +62,5 @@ pipeline{
     }
 
 }
+
 
