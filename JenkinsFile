@@ -29,7 +29,7 @@ pipeline{
                 date: $(date +%Y-%m-%d_%H-%M-%S)
                 url: $BUILD_URL
                 EOF
-                  '''
+                '''
                 archiveArtifacts artifacts: 'deployment_artifact$TAG.txt', fingerprint: true, followSymlinks: false
               }
             }
@@ -62,5 +62,6 @@ pipeline{
     }
 
 }
+
 
 
